@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>HealthFirst Klinik | Your Health, Our Priority</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--blue:#1976D2;--blue-light:#E3F2FD;--blue-dark:#0D47A1;--dark:#1A1A2E;--text:#1E293B;--gray:#64748B;--border:#E2E8F0}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Inter',sans-serif;background:#fff;color:var(--text)}
+a{text-decoration:none;color:inherit}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:999;background:#fff;padding:14px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 12px rgba(0,0,0,0.08)}
+.nav-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.05rem;color:var(--text)}
+.nav-logo-icon{width:36px;height:36px;background:var(--blue);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem}
+.nav-links{display:flex;gap:28px}
+.nav-links a{color:var(--gray);font-size:0.86rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--blue)}
+.nav-cta{background:var(--blue);color:#fff;padding:10px 22px;border-radius:50px;font-weight:700;font-size:0.86rem;transition:all .2s}
+.nav-cta:hover{background:var(--blue-dark)}
+
+.hero{min-height:100vh;background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 100%);display:flex;align-items:center;padding:100px 48px 60px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;bottom:-80px;right:-80px;width:400px;height:400px;background:rgba(255,255,255,0.05);border-radius:50%}
+.hero::before{content:'';position:absolute;top:-60px;left:40%;width:300px;height:300px;background:rgba(255,255,255,0.04);border-radius:50%}
+.hero-inner{max-width:1100px;width:100%;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);color:#fff;font-size:0.78rem;font-weight:600;padding:7px 16px;border-radius:50px;margin-bottom:22px;border:1px solid rgba(255,255,255,0.2)}
+.dot-g{width:8px;height:8px;background:#4CAF50;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+.hero h1{font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:800;color:#fff;line-height:1.1;margin-bottom:18px}
+.hero h1 span{color:#90CAF9}
+.hero p{color:rgba(255,255,255,0.7);font-size:0.98rem;line-height:1.7;max-width:440px;margin-bottom:32px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--blue);padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.9rem;display:inline-flex;align-items:center;gap:8px;transition:all .2s}
+.btn-white:hover{background:#f0f7ff;transform:translateY(-2px)}
+.btn-outline-w{border:2px solid rgba(255,255,255,0.4);color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:0.9rem;transition:all .2s}
+.btn-outline-w:hover{border-color:#fff;background:rgba(255,255,255,0.1)}
+.hero-right{display:flex;flex-direction:column;gap:14px}
+.info-card{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px;backdrop-filter:blur(8px)}
+.ic-icon{width:44px;height:44px;background:rgba(255,255,255,0.15);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.ic-title{font-weight:700;color:#fff;font-size:0.92rem;margin-bottom:3px}
+.ic-sub{color:rgba(255,255,255,0.55);font-size:0.78rem}
+
+section{padding:90px 48px}
+.container{max-width:1100px;margin:0 auto}
+.sec-tag{display:inline-block;background:var(--blue-light);color:var(--blue);font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:14px}
+.sec-h{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;margin-bottom:14px}
+.sec-sub{color:var(--gray);font-size:0.95rem;max-width:560px;line-height:1.7}
+
+/* SERVICES */
+#services{background:var(--blue-light)}
+.srv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:50px}
+.srv-card{background:#fff;border-radius:16px;padding:28px 22px;transition:all .3s;border-bottom:4px solid transparent}
+.srv-card:hover{transform:translateY(-5px);box-shadow:0 12px 35px rgba(25,118,210,0.12);border-bottom-color:var(--blue)}
+.srv-icon{width:54px;height:54px;background:var(--blue-light);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:18px;transition:all .3s}
+.srv-card:hover .srv-icon{background:var(--blue);color:#fff}
+.srv-card h4{font-weight:700;font-size:0.95rem;margin-bottom:8px}
+.srv-card p{color:var(--gray);font-size:0.82rem;line-height:1.6}
+
+/* DOCTORS */
+#doctors{background:#fff}
+.doc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px}
+.doc-card{border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all .3s}
+.doc-card:hover{box-shadow:0 10px 30px rgba(25,118,210,0.1);transform:translateY(-4px);border-color:var(--blue)}
+.doc-img{height:200px;display:flex;align-items:center;justify-content:center;font-size:5rem;background:linear-gradient(135deg,var(--blue-light),#BBDEFB)}
+.doc-body{padding:22px}
+.doc-body h4{font-weight:800;font-size:1rem;margin-bottom:4px}
+.doc-spec{font-size:0.75rem;color:var(--blue);font-weight:700;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:10px}
+.doc-body p{color:var(--gray);font-size:0.82rem;line-height:1.5;margin-bottom:14px}
+.doc-avail{display:inline-flex;align-items:center;gap:6px;font-size:0.78rem;color:#2E7D32;font-weight:600;background:#E8F5E9;padding:5px 12px;border-radius:50px}
+
+/* BOOKING SECTION */
+#book{background:linear-gradient(135deg,var(--blue-dark),var(--blue));padding:80px 48px}
+.book-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.book-left h2{font-size:2.4rem;font-weight:800;color:#fff;margin-bottom:16px;line-height:1.15}
+.book-left p{color:rgba(255,255,255,0.65);font-size:0.96rem;line-height:1.7;margin-bottom:28px}
+.hours-list{display:flex;flex-direction:column;gap:10px}
+.hour-item{display:flex;justify-content:space-between;padding:12px 16px;background:rgba(255,255,255,0.1);border-radius:10px;font-size:0.88rem;color:#fff}
+.hour-item span:last-child{color:#90CAF9;font-weight:600}
+.contact-cards{display:flex;flex-direction:column;gap:14px}
+.c-card{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.15);border-radius:14px;padding:18px 20px;display:flex;align-items:center;gap:14px}
+.cc-icon{width:42px;height:42px;background:rgba(255,255,255,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;flex-shrink:0}
+.cc-label{font-size:0.75rem;color:rgba(255,255,255,0.5);margin-bottom:3px;text-transform:uppercase;letter-spacing:0.5px}
+.cc-val{font-size:0.92rem;color:#fff;font-weight:600}
+.cc-val a{color:#90CAF9}
+.wa-appt{background:#25D366;color:#fff;padding:16px;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:0.96rem;transition:all .2s;margin-top:8px}
+.wa-appt:hover{background:#1fb857;transform:translateY(-2px)}
+
+footer{background:var(--dark);color:rgba(255,255,255,0.35);text-align:center;padding:24px;font-size:0.8rem}
+footer span{color:#90CAF9}
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:999;width:58px;height:58px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 4px 20px rgba(37,211,102,0.4);animation:waf 3s ease-in-out infinite}
+@keyframes waf{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+@media(max-width:1000px){.srv-grid{grid-template-columns:repeat(2,1fr)}.doc-grid{grid-template-columns:1fr 1fr}.book-inner,.hero-inner{grid-template-columns:1fr}.nav-links{display:none}nav{padding:12px 20px}}
+@media(max-width:600px){section{padding:60px 20px}.hero{padding:80px 20px 50px}.srv-grid,.doc-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><div class="nav-logo-icon"><i class="fas fa-heartbeat"></i></div> HealthFirst Klinik</div>
+  <div class="nav-links">
+    <a href="#services">Services</a><a href="#doctors">Doctors</a><a href="#book">Appointments</a>
+  </div>
+  <a href="https://wa.me/601XXXXXXXXX" class="nav-cta" target="_blank"><i class="fab fa-whatsapp"></i> Book Appointment</a>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><div class="dot-g"></div> Accepting Walk-In Patients</div>
+      <h1>Your Health,<br><span>Our Priority</span></h1>
+      <p>Compassionate, professional medical care for your whole family. From general consultations to specialist referrals — we're here when you need us most.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/601XXXXXXXXX" class="btn-white" target="_blank"><i class="fas fa-calendar-plus"></i> Book Appointment</a>
+        <a href="#services" class="btn-outline-w">Our Services</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="info-card"><div class="ic-icon">🕐</div><div><div class="ic-title">Operating Hours</div><div class="ic-sub">Mon–Fri: 8AM–8PM · Sat: 8AM–2PM</div></div></div>
+      <div class="info-card"><div class="ic-icon">📍</div><div><div class="ic-title">Location</div><div class="ic-sub">No. 5, Jalan Kesihatan, Nilai, N. Sembilan</div></div></div>
+      <div class="info-card"><div class="ic-icon">🩺</div><div><div class="ic-title">4 Specialist Doctors</div><div class="ic-sub">General, Paediatric, Dental & Women's Health</div></div></div>
+      <div class="info-card"><div class="ic-icon">💊</div><div><div class="ic-title">In-Clinic Pharmacy</div><div class="ic-sub">Full pharmacy & medication dispensary on-site</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:0">
+      <span class="sec-tag">What We Treat</span>
+      <h2 class="sec-h">Our Services</h2>
+      <p class="sec-sub" style="margin:0 auto">Comprehensive medical care under one roof.</p>
+    </div>
+    <div class="srv-grid">
+      <div class="srv-card"><div class="srv-icon">🩺</div><h4>General Consultation</h4><p>Fever, flu, cough, infections and general health issues handled with care.</p></div>
+      <div class="srv-card"><div class="srv-icon">👶</div><h4>Paediatric Care</h4><p>Child health, vaccinations, growth monitoring and developmental checks.</p></div>
+      <div class="srv-card"><div class="srv-icon">🦷</div><h4>Dental Services</h4><p>Cleaning, fillings, extractions and routine dental examinations.</p></div>
+      <div class="srv-card"><div class="srv-icon">💉</div><h4>Vaccinations</h4><p>Adult and child vaccinations including flu, hepatitis and travel jabs.</p></div>
+      <div class="srv-card"><div class="srv-icon">🔬</div><h4>Lab & Blood Tests</h4><p>On-site laboratory for blood tests, urine analysis and health screenings.</p></div>
+      <div class="srv-card"><div class="srv-icon">❤️</div><h4>Chronic Disease</h4><p>Diabetes, hypertension and cholesterol management with follow-up care.</p></div>
+      <div class="srv-card"><div class="srv-icon">👩</div><h4>Women's Health</h4><p>Pap smear, breast examination, family planning and antenatal care.</p></div>
+      <div class="srv-card"><div class="srv-icon">💊</div><h4>In-Clinic Pharmacy</h4><p>Full dispensary with prescription and OTC medications available daily.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="doctors">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:0">
+      <span class="sec-tag">Our Team</span>
+      <h2 class="sec-h">Meet Our Doctors</h2>
+      <p class="sec-sub" style="margin:0 auto">Experienced, caring professionals dedicated to your wellbeing.</p>
+    </div>
+    <div class="doc-grid">
+      <div class="doc-card"><div class="doc-img">👨‍⚕️</div><div class="doc-body"><h4>Dr. Ahmad Zulkarnain</h4><div class="doc-spec">General Practitioner</div><p>15 years clinical experience. MBBS (UM). Specialises in chronic disease management and preventive care.</p><div class="doc-avail"><i class="fas fa-circle" style="font-size:.5rem"></i> Available Today</div></div></div>
+      <div class="doc-card"><div class="doc-img">👩‍⚕️</div><div class="doc-body"><h4>Dr. Nurul Hana</h4><div class="doc-spec">Paediatrics & Women's Health</div><p>Certified paediatrician with expertise in child development and women's reproductive health.</p><div class="doc-avail"><i class="fas fa-circle" style="font-size:.5rem"></i> Available Today</div></div></div>
+      <div class="doc-card"><div class="doc-img">🦷</div><div class="doc-body"><h4>Dr. Rajesh Kumar</h4><div class="doc-spec">Dentist — BDS (IMU)</div><p>Gentle, patient-focused dental care for adults and children. Specialises in cosmetic and restorative dentistry.</p><div class="doc-avail"><i class="fas fa-circle" style="font-size:.5rem"></i> Available Mon–Fri</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="book" style="padding:80px 48px">
+  <div class="book-inner">
+    <div class="book-left">
+      <h2>Book Your<br>Appointment Today</h2>
+      <p>Walk-in patients are always welcome. For priority service, book ahead via WhatsApp or call our front desk.</p>
+      <div class="hours-list">
+        <div class="hour-item"><span>Monday – Friday</span><span>8:00 AM – 8:00 PM</span></div>
+        <div class="hour-item"><span>Saturday</span><span>8:00 AM – 2:00 PM</span></div>
+        <div class="hour-item"><span>Sunday & Public Holiday</span><span>Closed</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="contact-cards">
+        <div class="c-card"><div class="cc-icon"><i class="fab fa-whatsapp"></i></div><div><div class="cc-label">WhatsApp</div><div class="cc-val"><a href="#">01X-XXX XXXX</a></div></div></div>
+        <div class="c-card"><div class="cc-icon"><i class="fas fa-phone"></i></div><div><div class="cc-label">Phone</div><div class="cc-val"><a href="#">06-XXX XXXX</a></div></div></div>
+        <div class="c-card"><div class="cc-icon"><i class="fas fa-map-marker-alt"></i></div><div><div class="cc-label">Address</div><div class="cc-val">No. 5, Jalan Kesihatan, Nilai</div></div></div>
+      </div>
+      <a href="https://wa.me/601XXXXXXXXX" class="wa-appt" target="_blank"><i class="fab fa-whatsapp" style="font-size:1.2rem"></i> WhatsApp for Appointment</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2025 <span>HealthFirst Klinik</span>. Your Health, Our Priority.</footer>
+<a href="https://wa.me/601XXXXXXXXX" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>The Sharp Barber | Premium Barbershop</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--gold:#C9A84C;--dark:#0D0D0D;--dark2:#161616;--dark3:#1E1E1E;--light:#F5F5F5}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Inter',sans-serif;background:var(--dark);color:#fff}
+a{text-decoration:none;color:inherit}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;transition:all .3s}
+nav.scrolled{background:var(--dark);border-bottom:1px solid #222}
+.nav-logo{font-family:'Oswald',sans-serif;font-size:1.3rem;letter-spacing:2px;color:#fff}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:28px}
+.nav-links a{color:rgba(255,255,255,0.6);font-size:0.86rem;letter-spacing:1px;text-transform:uppercase;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold);color:#000;padding:10px 24px;font-family:'Oswald',sans-serif;font-size:0.9rem;letter-spacing:2px;text-transform:uppercase;font-weight:600;transition:all .2s}
+.nav-cta:hover{background:#b8973e}
+
+.hero{min-height:100vh;background:var(--dark);display:flex;align-items:center;padding:100px 48px 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;right:0;width:45%;height:100%;background:linear-gradient(180deg,#1A1400,#0D0D00);clip-path:polygon(20% 0,100% 0,100% 100%,0 100%)}
+.hero-content{position:relative;z-index:2;max-width:600px}
+.hero-tag{font-family:'Oswald',sans-serif;font-size:0.8rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.hero-tag::before{content:'';display:block;width:30px;height:1px;background:var(--gold)}
+.hero h1{font-family:'Oswald',sans-serif;font-size:clamp(3rem,7vw,5.5rem);line-height:0.95;font-weight:700;letter-spacing:-1px;margin-bottom:24px}
+.hero h1 .line2{color:var(--gold)}
+.hero p{color:rgba(255,255,255,0.55);font-size:0.96rem;line-height:1.75;max-width:420px;margin-bottom:36px}
+.hero-btns{display:flex;gap:16px}
+.btn-gold{background:var(--gold);color:#000;padding:14px 32px;font-family:'Oswald',sans-serif;font-size:0.9rem;letter-spacing:2px;text-transform:uppercase;font-weight:600;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.btn-gold:hover{background:#b8973e;transform:translateY(-2px)}
+.btn-ghost{border:1px solid rgba(255,255,255,0.2);color:#fff;padding:14px 32px;font-family:'Oswald',sans-serif;font-size:0.9rem;letter-spacing:2px;text-transform:uppercase;transition:all .2s}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.hero-stats{display:flex;gap:40px;margin-top:56px;padding-top:32px;border-top:1px solid #222}
+.h-stat .num{font-family:'Oswald',sans-serif;font-size:2rem;color:var(--gold);font-weight:700}
+.h-stat .lbl{font-size:0.75rem;color:#555;letter-spacing:1px;text-transform:uppercase;margin-top:2px}
+
+section{padding:90px 48px}
+.container{max-width:1100px;margin:0 auto}
+.sec-eyebrow{font-family:'Oswald',sans-serif;font-size:0.75rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.sec-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--gold)}
+.sec-h{font-family:'Oswald',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.1;margin-bottom:14px}
+
+/* SERVICES */
+#services{background:var(--dark2)}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#222;margin-top:50px}
+.srv{background:var(--dark2);padding:36px 28px;transition:all .3s;border-bottom:3px solid transparent}
+.srv:hover{background:var(--dark3);border-bottom-color:var(--gold)}
+.srv-icon{font-size:2.2rem;margin-bottom:20px}
+.srv h3{font-family:'Oswald',sans-serif;font-size:1.1rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+.srv p{font-size:0.84rem;color:#666;line-height:1.6;margin-bottom:18px}
+.srv-price{font-family:'Oswald',sans-serif;font-size:1.4rem;color:var(--gold);font-weight:700}
+.srv-price span{font-size:0.8rem;color:#555;font-family:'Inter',sans-serif}
+
+/* GALLERY */
+#gallery{background:var(--dark)}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:50px}
+.gal-item{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:3rem;transition:all .3s;position:relative;overflow:hidden}
+.gal-item:hover .gal-overlay{opacity:1}
+.gal-overlay{position:absolute;inset:0;background:rgba(201,168,76,0.85);display:flex;align-items:center;justify-content:center;opacity:0;transition:all .3s}
+.gal-overlay i{font-size:2rem;color:#000}
+.g1{background:linear-gradient(135deg,#1a1200,#3d2e00);grid-column:span 2;grid-row:span 2}
+.g2{background:linear-gradient(135deg,#0d0d0d,#1a1400)}
+.g3{background:linear-gradient(135deg,#111100,#222200)}
+.g4{background:linear-gradient(135deg,#0a0a00,#1a1600)}
+.g5{background:linear-gradient(135deg,#1a1200,#2a1f00)}
+
+/* BARBERS */
+#barbers{background:var(--dark2)}
+.barbers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px}
+.barber-card{background:var(--dark3);border:1px solid #222;border-radius:0;transition:all .3s;overflow:hidden}
+.barber-card:hover{border-color:var(--gold);transform:translateY(-4px)}
+.barber-img{height:220px;display:flex;align-items:center;justify-content:center;font-size:5rem;background:linear-gradient(135deg,#1a1400,#0d0d0d)}
+.barber-info{padding:22px}
+.barber-info h4{font-family:'Oswald',sans-serif;font-size:1.1rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.barber-info .role{font-size:0.78rem;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+.barber-info p{font-size:0.82rem;color:#555;line-height:1.5}
+
+/* BOOKING */
+#booking{background:var(--gold)}
+.booking-inner{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.booking-inner h2{font-family:'Oswald',sans-serif;font-size:2.8rem;font-weight:700;color:#000;line-height:1.1}
+.booking-inner p{color:rgba(0,0,0,0.6);margin-top:10px;font-size:0.96rem}
+.btn-dark-book{background:#000;color:#fff;padding:16px 36px;font-family:'Oswald',sans-serif;font-size:0.95rem;letter-spacing:2px;text-transform:uppercase;transition:all .2s;display:inline-flex;align-items:center;gap:10px}
+.btn-dark-book:hover{background:#1a1a1a;transform:translateY(-2px)}
+
+footer{background:#080808;color:#333;text-align:center;padding:24px;font-size:0.8rem;border-top:1px solid #111}
+footer span{color:var(--gold)}
+
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:999;width:58px;height:58px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 4px 20px rgba(37,211,102,0.4);animation:waf 3s ease-in-out infinite}
+@keyframes waf{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+@media(max-width:900px){.services-grid{grid-template-columns:repeat(2,1fr)}.gallery-grid{grid-template-columns:repeat(2,1fr)}.g1{grid-column:span 1;grid-row:span 1}.barbers-grid{grid-template-columns:1fr}.nav-links{display:none}nav{padding:14px 20px}}
+@media(max-width:600px){section{padding:60px 20px}.hero{padding:80px 20px 50px}.booking-inner{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-logo">THE SHARP <span>BARBER</span></div>
+  <div class="nav-links">
+    <a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#barbers">Our Team</a><a href="#booking">Book</a>
+  </div>
+  <a href="https://wa.me/601XXXXXXXXX" class="nav-cta" target="_blank">Book Now</a>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-tag">Premium Barbershop</div>
+    <h1>LOOK SHARP.<br><span class="line2">FEEL SHARP.</span></h1>
+    <p>Expert cuts, clean fades, and precise beard grooming. Walk in or book ahead — your best look is one appointment away.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/601XXXXXXXXX" class="btn-gold" target="_blank"><i class="fab fa-whatsapp"></i> Book Appointment</a>
+      <a href="#services" class="btn-ghost">Our Services</a>
+    </div>
+    <div class="hero-stats">
+      <div class="h-stat"><div class="num">2,000+</div><div class="lbl">Happy Clients</div></div>
+      <div class="h-stat"><div class="num">5★</div><div class="lbl">Rated Service</div></div>
+      <div class="h-stat"><div class="num">8+</div><div class="lbl">Years Experience</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="sec-eyebrow">What We Offer</div>
+    <h2 class="sec-h">Our Services</h2>
+    <div class="services-grid">
+      <div class="srv"><div class="srv-icon">✂️</div><h3>Haircut</h3><p>Precision cuts tailored to your face shape and style preference.</p><div class="srv-price">RM 25 <span>/ cut</span></div></div>
+      <div class="srv"><div class="srv-icon">🪒</div><h3>Beard Trim</h3><p>Clean edges, shape and style for any beard length or type.</p><div class="srv-price">RM 15 <span>/ session</span></div></div>
+      <div class="srv"><div class="srv-icon">💈</div><h3>Fade & Style</h3><p>Premium skin fade with finish and styling product application.</p><div class="srv-price">RM 35 <span>/ session</span></div></div>
+      <div class="srv"><div class="srv-icon">🧔</div><h3>Full Grooming</h3><p>Complete package — haircut, beard trim, eyebrow + hot towel.</p><div class="srv-price">RM 60 <span>/ package</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="container">
+    <div class="sec-eyebrow">Portfolio</div>
+    <h2 class="sec-h">Our Work</h2>
+    <p style="color:#555;font-size:0.9rem;margin-top:8px">Every cut tells a story. Add your real photos here.</p>
+  </div>
+  <div class="gallery-grid" style="margin-top:40px;max-width:1100px;margin-left:auto;margin-right:auto">
+    <div class="gal-item g1"><span>✂️</span><div class="gal-overlay"><i class="fas fa-search-plus"></i></div></div>
+    <div class="gal-item g2"><span>💈</span><div class="gal-overlay"><i class="fas fa-search-plus"></i></div></div>
+    <div class="gal-item g3"><span>🪒</span><div class="gal-overlay"><i class="fas fa-search-plus"></i></div></div>
+    <div class="gal-item g4"><span>💇</span><div class="gal-overlay"><i class="fas fa-search-plus"></i></div></div>
+    <div class="gal-item g5"><span>🧔</span><div class="gal-overlay"><i class="fas fa-search-plus"></i></div></div>
+  </div>
+</section>
+
+<section id="barbers">
+  <div class="container">
+    <div class="sec-eyebrow">The Team</div>
+    <h2 class="sec-h">Meet Our Barbers</h2>
+    <div class="barbers-grid">
+      <div class="barber-card"><div class="barber-img">👨‍🦱</div><div class="barber-info"><h4>Hafiz Razali</h4><div class="role">Senior Barber · 8 Years Exp</div><p>Specialises in skin fades, pompadours and modern Asian cuts.</p></div></div>
+      <div class="barber-card"><div class="barber-img">👨‍🦲</div><div class="barber-info"><h4>Danial Amin</h4><div class="role">Master Barber · 5 Years Exp</div><p>Known for precise beard sculpting and classic barbershop styles.</p></div></div>
+      <div class="barber-card"><div class="barber-img">🧑‍🦯</div><div class="barber-info"><h4>Zulfikri</h4><div class="role">Junior Barber · 2 Years Exp</div><p>Creative cuts and fresh styles for the younger generation.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="booking">
+  <div class="container booking-inner">
+    <div>
+      <h2>READY FOR YOUR<br>BEST LOOK?</h2>
+      <p>Walk in anytime or book via WhatsApp for priority service.</p>
+    </div>
+    <a href="https://wa.me/601XXXXXXXXX" class="btn-dark-book" target="_blank"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
+  </div>
+</section>
+
+<footer>© 2025 <span>The Sharp Barber</span>. Premium Barbershop Services.</footer>
+<a href="https://wa.me/601XXXXXXXXX" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50)
+})
+</script>
+</body>
+</html>

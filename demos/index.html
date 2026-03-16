@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Web Design Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#0D0D0D;color:#fff}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{padding:18px 40px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #222}
+.nav-logo{font-weight:800;font-size:1.1rem;color:#FFD600}
+.nav-cta{background:#FFD600;color:#1A1A1A;padding:10px 22px;border-radius:50px;font-weight:700;font-size:0.88rem}
+
+/* HERO */
+.hero{text-align:center;padding:90px 40px 70px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(255,214,0,0.12) 0%,transparent 70%);pointer-events:none}
+.hero-tag{display:inline-block;background:#FFD600;color:#1A1A1A;font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:7px 18px;border-radius:50px;margin-bottom:22px}
+.hero h1{font-size:clamp(2.2rem,5vw,4rem);font-weight:900;line-height:1.1;margin-bottom:18px}
+.hero h1 span{color:#FFD600}
+.hero p{font-size:1rem;color:#888;max-width:560px;margin:0 auto 40px;line-height:1.7}
+.hero-stats{display:flex;gap:40px;justify-content:center;margin-top:50px}
+.stat{text-align:center}
+.stat-n{display:block;font-size:2rem;font-weight:900;color:#FFD600}
+.stat-l{font-size:0.78rem;color:#666;margin-top:4px}
+
+/* GRID */
+.grid-section{padding:80px 40px;max-width:1200px;margin:0 auto}
+.grid-title{text-align:center;margin-bottom:50px}
+.grid-title h2{font-size:2rem;font-weight:800;margin-bottom:10px}
+.grid-title p{color:#666;font-size:0.95rem}
+.demos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+
+/* CARD */
+.demo-card{background:#161616;border:1px solid #222;border-radius:16px;overflow:hidden;transition:all .3s;cursor:pointer}
+.demo-card:hover{transform:translateY(-6px);border-color:#FFD600;box-shadow:0 12px 40px rgba(255,214,0,0.15)}
+.card-preview{height:200px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;position:relative;overflow:hidden}
+.card-preview .preview-nav{position:absolute;top:0;left:0;right:0;height:32px;display:flex;align-items:center;padding:0 12px;gap:8px}
+.preview-dot{width:8px;height:8px;border-radius:50%}
+.preview-url{height:14px;background:rgba(255,255,255,0.15);border-radius:4px;flex:1;margin:0 8px}
+.card-preview .preview-content{text-align:center;z-index:1}
+.card-preview .preview-content h3{font-size:1rem;font-weight:800;margin-top:10px;line-height:1.2}
+.card-preview .preview-content p{font-size:0.7rem;opacity:0.7;margin-top:4px}
+.card-body{padding:20px}
+.card-type{font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+.card-name{font-size:1.1rem;font-weight:800;margin-bottom:8px}
+.card-desc{font-size:0.84rem;color:#666;margin-bottom:18px;line-height:1.5}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.tag{font-size:0.72rem;padding:4px 10px;border-radius:50px;background:#1E1E1E;color:#888}
+.card-link{display:flex;align-items:center;justify-content:space-between;background:#FFD600;color:#1A1A1A;padding:11px 16px;border-radius:10px;font-weight:700;font-size:0.88rem;transition:all .2s}
+.card-link:hover{background:#E6C100}
+
+/* CONTACT STRIP */
+.contact-strip{background:#FFD600;padding:60px 40px;text-align:center}
+.contact-strip h2{font-size:2rem;font-weight:900;color:#1A1A1A;margin-bottom:10px}
+.contact-strip p{color:#555;margin-bottom:24px}
+.contact-strip a{display:inline-block;background:#1A1A1A;color:#FFD600;padding:14px 32px;border-radius:50px;font-weight:700}
+
+/* FOOTER */
+footer{text-align:center;padding:24px;color:#444;font-size:0.82rem;border-top:1px solid #1A1A1A}
+
+@media(max-width:900px){.demos-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.demos-grid{grid-template-columns:1fr}.hero-stats{gap:24px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">⚡ Your Name</div>
+  <a href="https://wa.me/601XXXXXXXXX" class="nav-cta" target="_blank"><i class="fab fa-whatsapp"></i> Hire Me</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">Web Design Portfolio</div>
+  <h1>Websites That <span>Win</span><br>Local Customers</h1>
+  <p>Professional, mobile-ready websites for local businesses in Malaysia — built fast, priced fairly, and designed to convert visitors into customers.</p>
+  <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+    <a href="https://wa.me/601XXXXXXXXX" style="background:#FFD600;color:#1A1A1A;padding:14px 28px;border-radius:50px;font-weight:700" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Me</a>
+    <a href="#demos" style="background:#1E1E1E;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;border:1px solid #333">View Demos ↓</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-n">5+</span><span class="stat-l">Industries</span></div>
+    <div class="stat"><span class="stat-n">RM800</span><span class="stat-l">Starting From</span></div>
+    <div class="stat"><span class="stat-n">3–5</span><span class="stat-l">Days Delivery</span></div>
+    <div class="stat"><span class="stat-n">FREE</span><span class="stat-l">Hosting</span></div>
+  </div>
+</div>
+
+<div class="grid-section" id="demos">
+  <div class="grid-title">
+    <h2>Live Demo Websites</h2>
+    <p>Click any card to view the full demo website</p>
+  </div>
+  <div class="demos-grid">
+
+    <!-- Restaurant -->
+    <div class="demo-card" onclick="location.href='restaurant.html'">
+      <div class="card-preview" style="background:linear-gradient(135deg,#5C2D00,#3A1600)">
+        <div class="preview-nav" style="background:rgba(0,0,0,0.4)">
+          <div class="preview-dot" style="background:#ff5f57"></div>
+          <div class="preview-dot" style="background:#ffbd2e"></div>
+          <div class="preview-dot" style="background:#28c840"></div>
+          <div class="preview-url"></div>
+        </div>
+        <div class="preview-content">
+          <div>🍛</div>
+          <h3 style="color:#FF6B35">Warung Kopi Setia</h3>
+          <p style="color:#ccc">Restaurant / Cafe</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-type" style="color:#FF6B35">Restaurant / Cafe</div>
+        <div class="card-name">Warung Kopi Setia</div>
+        <div class="card-desc">Warm, appetising design with online menu, reservations & WhatsApp ordering.</div>
+        <div class="card-tags">
+          <span class="tag">Menu Display</span><span class="tag">Reservation CTA</span><span class="tag">WhatsApp Order</span>
+        </div>
+        <div class="card-link">View Live Demo <i class="fas fa-arrow-right"></i></div>
+      </div>
+    </div>
+
+    <!-- Barbershop -->
+    <div class="demo-card" onclick="location.href='barbershop.html'">
+      <div class="card-preview" style="background:linear-gradient(135deg,#0D0D0D,#1A1400)">
+        <div class="preview-nav" style="background:rgba(0,0,0,0.6)">
+          <div class="preview-dot" style="background:#ff5f57"></div>
+          <div class="preview-dot" style="background:#ffbd2e"></div>
+          <div class="preview-dot" style="background:#28c840"></div>
+          <div class="preview-url"></div>
+        </div>
+        <div class="preview-content">
+          <div>✂️</div>
+          <h3 style="color:#C9A84C">The Sharp Barber</h3>
+          <p style="color:#aaa">Barbershop / Salon</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-type" style="color:#C9A84C">Barbershop / Salon</div>
+        <div class="card-name">The Sharp Barber</div>
+        <div class="card-desc">Sleek dark design with services, pricing gallery and booking call-to-action.</div>
+        <div class="card-tags">
+          <span class="tag">Services & Pricing</span><span class="tag">Gallery</span><span class="tag">Book Now</span>
+        </div>
+        <div class="card-link" style="background:#C9A84C">View Live Demo <i class="fas fa-arrow-right"></i></div>
+      </div>
+    </div>
+
+    <!-- Gym -->
+    <div class="demo-card" onclick="location.href='gym.html'">
+      <div class="card-preview" style="background:linear-gradient(135deg,#000,#0A1A0A)">
+        <div class="preview-nav" style="background:rgba(0,0,0,0.7)">
+          <div class="preview-dot" style="background:#ff5f57"></div>
+          <div class="preview-dot" style="background:#ffbd2e"></div>
+          <div class="preview-dot" style="background:#28c840"></div>
+          <div class="preview-url"></div>
+        </div>
+        <div class="preview-content">
+          <div>🏋️</div>
+          <h3 style="color:#00DD55">Iron Peak Gym</h3>
+          <p style="color:#aaa">Gym / Fitness Studio</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-type" style="color:#00DD55">Gym / Fitness Studio</div>
+        <div class="card-name">Iron Peak Gym</div>
+        <div class="card-desc">Bold, high-energy design with class schedule, membership pricing & trainer profiles.</div>
+        <div class="card-tags">
+          <span class="tag">Class Schedule</span><span class="tag">Membership Plans</span><span class="tag">Trainers</span>
+        </div>
+        <div class="card-link" style="background:#00DD55;color:#000">View Live Demo <i class="fas fa-arrow-right"></i></div>
+      </div>
+    </div>
+
+    <!-- Clinic -->
+    <div class="demo-card" onclick="location.href='clinic.html'">
+      <div class="card-preview" style="background:linear-gradient(135deg,#0D47A1,#1565C0)">
+        <div class="preview-nav" style="background:rgba(0,0,0,0.3)">
+          <div class="preview-dot" style="background:#ff5f57"></div>
+          <div class="preview-dot" style="background:#ffbd2e"></div>
+          <div class="preview-dot" style="background:#28c840"></div>
+          <div class="preview-url"></div>
+        </div>
+        <div class="preview-content">
+          <div>🏥</div>
+          <h3 style="color:#90CAF9">HealthFirst Klinik</h3>
+          <p style="color:#ccc">Clinic / Pharmacy</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-type" style="color:#2196F3">Clinic / Pharmacy</div>
+        <div class="card-name">HealthFirst Klinik</div>
+        <div class="card-desc">Clean, trustworthy design with services, doctor profiles & appointment booking.</div>
+        <div class="card-tags">
+          <span class="tag">Services</span><span class="tag">Doctor Profiles</span><span class="tag">Appointments</span>
+        </div>
+        <div class="card-link" style="background:#2196F3">View Live Demo <i class="fas fa-arrow-right"></i></div>
+      </div>
+    </div>
+
+    <!-- Electrical -->
+    <div class="demo-card" onclick="location.href='electrical.html'">
+      <div class="card-preview" style="background:linear-gradient(135deg,#1A1A1A,#261F00)">
+        <div class="preview-nav" style="background:rgba(0,0,0,0.5)">
+          <div class="preview-dot" style="background:#ff5f57"></div>
+          <div class="preview-dot" style="background:#ffbd2e"></div>
+          <div class="preview-dot" style="background:#28c840"></div>
+          <div class="preview-url"></div>
+        </div>
+        <div class="preview-content">
+          <div>⚡</div>
+          <h3 style="color:#FFD600">Volta Electrical</h3>
+          <p style="color:#aaa">Electrical / Technical</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-type" style="color:#FFD600">Electrical / Technical</div>
+        <div class="card-name">Volta Electrical Supply</div>
+        <div class="card-desc">Professional technical site with products, services, service areas & quote CTA.</div>
+        <div class="card-tags">
+          <span class="tag">Products</span><span class="tag">Service Areas</span><span class="tag">Quote CTA</span>
+        </div>
+        <div class="card-link">View Live Demo <i class="fas fa-arrow-right"></i></div>
+      </div>
+    </div>
+
+    <!-- CTA Card -->
+    <div class="demo-card" style="background:linear-gradient(135deg,#1A1400,#261F00);border-color:#FFD600;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:40px;text-align:center;min-height:400px">
+      <div style="font-size:2.5rem;margin-bottom:16px">🚀</div>
+      <h3 style="font-size:1.2rem;font-weight:800;margin-bottom:10px">Want one for<br>your business?</h3>
+      <p style="color:#888;font-size:0.86rem;margin-bottom:24px">I can build a custom website like these for your business in 3–5 days.</p>
+      <a href="https://wa.me/601XXXXXXXXX" target="_blank" style="background:#FFD600;color:#1A1A1A;padding:13px 24px;border-radius:50px;font-weight:700;font-size:0.9rem"><i class="fab fa-whatsapp"></i> WhatsApp Me Now</a>
+    </div>
+
+  </div>
+</div>
+
+<div class="contact-strip">
+  <h2>Let's Build Your Website</h2>
+  <p>Starting from RM 800 · Delivered in 3–5 days · Free hosting</p>
+  <a href="https://wa.me/601XXXXXXXXX" target="_blank"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+</div>
+
+<footer>© 2025 Your Name — Web Design & Development · your@email.com</footer>
+
+</body>
+</html>

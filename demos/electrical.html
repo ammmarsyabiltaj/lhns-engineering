@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Volta Electrical Supply | Power Your Space</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--yellow:#FFD600;--yellow-d:#E6C100;--dark:#1A1A1A;--mid:#252525;--light:#F5F5F5;--gray:#555;--border:#E8E8E8}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Inter',sans-serif;background:#fff;color:var(--dark)}
+a{text-decoration:none;color:inherit}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:999;background:#fff;padding:14px 48px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 16px rgba(0,0,0,0.07);transition:all .3s}
+.nav-logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.1rem}
+.nav-logo-icon{width:36px;height:36px;background:var(--yellow);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--dark)}
+.nav-links{display:flex;gap:6px}
+.nav-links a{color:var(--dark);font-size:0.86rem;font-weight:500;padding:7px 13px;border-radius:8px;transition:all .2s}
+.nav-links a:hover{background:var(--light)}
+.nav-cta{background:var(--yellow);color:var(--dark);padding:10px 22px;border-radius:50px;font-weight:700;font-size:0.88rem;transition:all .2s;display:inline-flex;align-items:center;gap:7px}
+.nav-cta:hover{background:var(--yellow-d)}
+
+.hero{min-height:100vh;background:linear-gradient(140deg,#FFFDE7 0%,#FFF9C4 50%,#F5F5F5 100%);display:flex;align-items:center;padding:100px 48px 60px;position:relative;overflow:hidden}
+.shape{position:absolute;pointer-events:none;border-radius:50%}
+.s1{width:50px;height:50px;background:var(--yellow);opacity:.5;top:18%;left:4%;animation:fl 6s ease-in-out infinite}
+.s2{width:26px;height:26px;background:var(--dark);opacity:.08;top:22%;right:5%;animation:fl 7s ease-in-out infinite 1s;border-radius:6px}
+.s3{width:70px;height:6px;background:var(--yellow-d);opacity:.4;bottom:25%;left:6%;animation:fl 8s ease-in-out infinite 2s;border-radius:3px}
+.s4{width:36px;height:36px;border:3px solid var(--dark);opacity:.08;bottom:20%;right:4%;animation:fl 6s ease-in-out infinite .5s}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.hero-inner{max-width:1100px;width:100%;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);color:var(--gray);font-size:0.82rem;font-weight:600;padding:8px 16px;border-radius:50px;margin-bottom:22px;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+.badge-dot{width:8px;height:8px;background:#4CAF50;border-radius:50%;animation:pulse 2s infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+.hero h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;line-height:1.08;margin-bottom:20px;letter-spacing:-1px}
+.hero h1 span{color:var(--yellow-d)}
+.hero p{color:var(--gray);font-size:1rem;line-height:1.75;max-width:460px;margin-bottom:36px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
+.btn-y{background:var(--yellow);color:var(--dark);padding:14px 28px;border-radius:50px;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:all .2s}
+.btn-y:hover{background:var(--yellow-d);transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,214,0,.4)}
+.btn-out{border:2px solid var(--dark);color:var(--dark);padding:14px 28px;border-radius:50px;font-weight:700;transition:all .2s}
+.btn-out:hover{background:var(--dark);color:#fff}
+.hero-stats{display:flex;gap:28px}
+.h-stat .num{font-size:1.6rem;font-weight:900;display:block;line-height:1}
+.h-stat .lbl{font-size:0.76rem;color:var(--gray);margin-top:4px;font-weight:500}
+.stat-div{width:1px;height:40px;background:var(--border)}
+.hero-visual{display:flex;justify-content:center}
+.hero-circle{width:440px;height:440px;background:var(--yellow);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 24px 80px rgba(255,214,0,.3);animation:hf 5s ease-in-out infinite}
+@keyframes hf{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.icons-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:32px}
+.icon-item{background:#fff;border-radius:14px;padding:22px 16px;display:flex;flex-direction:column;align-items:center;gap:10px;box-shadow:0 8px 30px rgba(0,0,0,.12);transition:all .2s}
+.icon-item:hover{transform:translateY(-4px)}
+.icon-item i{font-size:1.8rem;color:var(--dark)}
+.icon-item span{font-size:0.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+
+section{padding:90px 48px}
+.container{max-width:1100px;margin:0 auto}
+.sec-tag{display:inline-block;background:var(--yellow);color:var(--dark);font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:14px}
+.sec-h{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;margin-bottom:14px}
+.sec-sub{color:var(--gray);font-size:0.95rem;max-width:560px;line-height:1.7}
+
+/* SERVICES */
+#services{background:var(--light)}
+.srv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:50px}
+.srv-card{background:#fff;border-radius:20px;padding:32px 22px;border:1.5px solid var(--border);border-top:4px solid transparent;transition:all .3s;display:flex;flex-direction:column}
+.srv-card:hover{border-top-color:var(--yellow);box-shadow:0 12px 35px rgba(0,0,0,.1);transform:translateY(-6px)}
+.srv-icon{width:54px;height:54px;background:var(--light);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:18px;transition:all .3s}
+.srv-card:hover .srv-icon{background:var(--yellow)}
+.srv-card h4{font-weight:700;font-size:0.96rem;margin-bottom:10px}
+.srv-card ul{flex:1;display:flex;flex-direction:column;gap:7px;margin-bottom:20px}
+.srv-card ul li{font-size:0.82rem;color:var(--gray);padding-left:14px;position:relative;line-height:1.5}
+.srv-card ul li::before{content:'›';position:absolute;left:0;color:var(--yellow-d);font-weight:900}
+.srv-link{font-size:0.84rem;font-weight:700;display:inline-flex;align-items:center;gap:6px;transition:gap .2s}
+.srv-link:hover{gap:10px;color:var(--yellow-d)}
+
+/* ABOUT */
+#about{background:#fff}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-img{height:320px;background:linear-gradient(135deg,var(--dark),#333);border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:6rem;position:relative}
+.about-badge{position:absolute;bottom:-14px;right:-14px;background:var(--yellow);padding:14px 18px;border-radius:14px;text-align:center;box-shadow:0 8px 24px rgba(255,214,0,.4)}
+.about-badge .n{font-size:1.5rem;font-weight:900;display:block}
+.about-badge .l{font-size:0.7rem;font-weight:700}
+.about p{color:var(--gray);margin-bottom:16px;line-height:1.8;font-size:0.96rem}
+.perks{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.perk{display:flex;align-items:center;gap:8px;font-size:0.86rem;font-weight:600}
+.perk i{color:var(--yellow-d)}
+
+/* AREAS */
+#areas{background:linear-gradient(135deg,#FFFDE7,#FFF9C4)}
+.areas-pills{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:40px 0 20px}
+.pill{background:#fff;border:2px solid var(--yellow);padding:10px 20px;border-radius:50px;font-size:0.86rem;font-weight:600;display:inline-flex;align-items:center;gap:6px;transition:all .2s;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.pill:hover{background:var(--yellow);transform:translateY(-2px)}
+.pill i{color:var(--yellow-d);font-size:.78rem}
+.pill.more{background:var(--yellow)}
+
+/* PRICING */
+#pricing{background:var(--light)}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px;align-items:start}
+.p-card{background:#fff;border:1.5px solid var(--border);border-radius:20px;padding:36px 28px;position:relative;transition:all .3s}
+.p-card:hover{box-shadow:0 12px 35px rgba(0,0,0,.1);transform:translateY(-4px)}
+.p-card.featured{background:var(--yellow);border-color:var(--yellow);transform:scale(1.04)}
+.p-card.featured:hover{transform:scale(1.04) translateY(-4px)}
+.p-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--dark);color:#fff;font-size:0.72rem;font-weight:700;padding:5px 14px;border-radius:50px;white-space:nowrap}
+.p-icon{width:50px;height:50px;background:var(--light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin:0 auto 16px}
+.featured .p-icon{background:rgba(0,0,0,.1)}
+.p-card h3{text-align:center;font-size:1.3rem;font-weight:800;margin-bottom:4px}
+.p-card .p-sub{text-align:center;font-size:.84rem;color:var(--gray);margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid rgba(0,0,0,.08)}
+.p-feats{display:flex;flex-direction:column;gap:11px;margin-bottom:28px}
+.p-feats li{display:flex;align-items:center;gap:9px;font-size:.86rem}
+.p-feats li i.fa-check{color:#16A34A;font-size:.76rem}
+.p-feats li i.fa-times{color:#ccc;font-size:.76rem}
+.p-feats li.no{color:#bbb}
+.p-note{text-align:center;margin-top:28px;font-size:.84rem;color:var(--gray)}
+.p-note a{color:var(--dark);font-weight:700;text-decoration:underline}
+
+/* CONTACT */
+#contact{background:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.c-item{display:flex;gap:14px;margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid var(--border)}
+.c-item:last-of-type{border:none;margin-bottom:24px}
+.ci{width:44px;height:44px;background:var(--light);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;transition:all .3s}
+.c-item:hover .ci{background:var(--yellow)}
+.ci-lbl{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#999;margin-bottom:3px}
+.ci-val{font-size:.92rem;font-weight:600}
+.ci-val a{color:var(--dark);transition:color .2s}
+.ci-val a:hover{color:var(--yellow-d)}
+.wa-cta{background:#25D366;color:#fff;padding:16px;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:.96rem;transition:all .2s;width:100%;margin-top:8px}
+.wa-cta:hover{background:#1fb857;transform:translateY(-2px)}
+.map-ph{height:320px;background:var(--light);border-radius:18px;border:2px dashed var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#aaa}
+.map-ph i{font-size:3rem;color:#ddd}
+
+footer{background:var(--dark);color:rgba(255,255,255,.35);text-align:center;padding:24px;font-size:.8rem}
+footer span{color:var(--yellow)}
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:999;width:58px;height:58px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 4px 20px rgba(37,211,102,.4);animation:waf 3s ease-in-out infinite}
+@keyframes waf{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.wa-float:hover{animation:none;transform:scale(1.1)}
+
+@media(max-width:1000px){.hero-inner,.about-grid,.contact-grid{grid-template-columns:1fr}.srv-grid,.pricing-grid{grid-template-columns:repeat(2,1fr)}.nav-links{display:none}nav{padding:12px 20px}.hero-circle{width:320px;height:320px}}
+@media(max-width:600px){section{padding:60px 20px}.hero{padding:80px 20px 50px}.srv-grid,.pricing-grid{grid-template-columns:1fr}.p-card.featured{transform:none}.hero-btns{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><div class="nav-logo-icon"><i class="fas fa-bolt"></i></div> Volta Electrical</div>
+  <div class="nav-links">
+    <a href="#services">Services</a><a href="#about">About</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a>
+  </div>
+  <a href="https://wa.me/601XXXXXXXXX" class="nav-cta" target="_blank"><i class="fab fa-whatsapp"></i> Get Quote</a>
+</nav>
+
+<section class="hero" id="home">
+  <div class="shape s1"></div><div class="shape s2"></div><div class="shape s3"></div><div class="shape s4"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><div class="badge-dot"></div> Melaka &amp; Nilai Branches</div>
+      <h1>Power Your<br><span>Space.</span></h1>
+      <p>Solar, electrical, aircond &amp; CCTV — complete technical solutions for homes and businesses. End-to-end from consultation to installation and maintenance.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/601XXXXXXXXX" class="btn-y" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
+        <a href="#services" class="btn-out">View Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="h-stat"><span class="num">2</span><span class="lbl">Branches</span></div>
+        <div class="stat-div"></div>
+        <div class="h-stat"><span class="num">100+</span><span class="lbl">Installations</span></div>
+        <div class="stat-div"></div>
+        <div class="h-stat"><span class="num">5★</span><span class="lbl">Service</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-circle">
+        <div class="icons-grid">
+          <div class="icon-item"><i class="fas fa-solar-panel"></i><span>Solar</span></div>
+          <div class="icon-item"><i class="fas fa-plug"></i><span>Electrical</span></div>
+          <div class="icon-item"><i class="fas fa-snowflake"></i><span>Aircond</span></div>
+          <div class="icon-item"><i class="fas fa-video"></i><span>CCTV</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-header" style="margin-bottom:0">
+      <span class="sec-tag">What We Do</span>
+      <h2 class="sec-h">Our Services</h2>
+      <p class="sec-sub">Full technical solutions for residential, commercial and industrial clients.</p>
+    </div>
+    <div class="srv-grid">
+      <div class="srv-card"><div class="srv-icon"><i class="fas fa-solar-panel"></i></div><h4>Solar Panel Installation</h4><ul><li>Residential, Commercial &amp; Industrial</li><li>System Design &amp; Consultation</li><li>Full Supply &amp; Installation</li><li>Maintenance &amp; Monitoring</li></ul><a href="https://wa.me/601XXXXXXXXX" class="srv-link" target="_blank">Get Quote <i class="fas fa-arrow-right"></i></a></div>
+      <div class="srv-card"><div class="srv-icon"><i class="fas fa-plug"></i></div><h4>Electrical Wiring</h4><ul><li>New Wiring &amp; Rewiring</li><li>Testing &amp; Inspection</li><li>DB Board Installation</li><li>Fault Finding &amp; Repair</li></ul><a href="https://wa.me/601XXXXXXXXX" class="srv-link" target="_blank">Get Quote <i class="fas fa-arrow-right"></i></a></div>
+      <div class="srv-card"><div class="srv-icon"><i class="fas fa-snowflake"></i></div><h4>Air Conditioning</h4><ul><li>Supply &amp; Installation</li><li>Servicing &amp; Repair</li><li>Normal &amp; Overhaul</li><li>All Brands Supported</li></ul><a href="https://wa.me/601XXXXXXXXX" class="srv-link" target="_blank">Get Quote <i class="fas fa-arrow-right"></i></a></div>
+      <div class="srv-card"><div class="srv-icon"><i class="fas fa-video"></i></div><h4>CCTV Security</h4><ul><li>Full CCTV Installation</li><li>IP &amp; Analog Cameras</li><li>Remote Viewing Setup</li><li>System Configuration</li></ul><a href="https://wa.me/601XXXXXXXXX" class="srv-link" target="_blank">Get Quote <i class="fas fa-arrow-right"></i></a></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div style="position:relative">
+        <div class="about-img">⚡<div class="about-badge"><span class="n">100+</span><span class="l">Projects Done</span></div></div>
+      </div>
+      <div>
+        <span class="sec-tag">About Us</span>
+        <h2 class="sec-h">Trusted Technical<br>Experts</h2>
+        <p>Volta Electrical Supply is a professional technical services company serving Melaka and Nilai with over 5 years of industry experience. We specialise in solar, electrical, aircond and CCTV.</p>
+        <p>From small home repairs to large commercial installations — we deliver reliable, high-quality workmanship every time.</p>
+        <div class="perks">
+          <div class="perk"><i class="fas fa-bolt"></i> Fast Response</div>
+          <div class="perk"><i class="fas fa-tools"></i> Reliable Work</div>
+          <div class="perk"><i class="fas fa-hard-hat"></i> Expert Team</div>
+          <div class="perk"><i class="fas fa-handshake"></i> Fair Pricing</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="areas">
+  <div class="container" style="text-align:center">
+    <span class="sec-tag">Coverage</span>
+    <h2 class="sec-h">We Cover These Areas</h2>
+    <p class="sec-sub" style="margin:0 auto">Serving Melaka, Nilai &amp; surrounding districts.</p>
+    <div class="areas-pills">
+      <span class="pill"><i class="fas fa-map-marker-alt"></i> Melaka</span>
+      <span class="pill"><i class="fas fa-map-marker-alt"></i> Nilai</span>
+      <span class="pill"><i class="fas fa-map-marker-alt"></i> Seremban</span>
+      <span class="pill"><i class="fas fa-map-marker-alt"></i> Alor Gajah</span>
+      <span class="pill"><i class="fas fa-map-marker-alt"></i> Ayer Keroh</span>
+      <span class="pill"><i class="fas fa-map-marker-alt"></i> Jasin</span>
+      <span class="pill"><i class="fas fa-map-marker-alt"></i> Merlimau</span>
+      <span class="pill more">+ Nearby Areas</span>
+    </div>
+    <p style="font-size:.88rem;color:var(--gray)">Not sure if we cover your area? <a href="https://wa.me/601XXXXXXXXX" target="_blank" style="color:var(--dark);font-weight:700;text-decoration:underline">WhatsApp us</a> to find out!</p>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:0">
+      <span class="sec-tag">Packages</span>
+      <h2 class="sec-h">Service Packages</h2>
+      <p class="sec-sub" style="margin:0 auto">All prices are quoted — contact us for a free estimate.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="p-card"><div class="p-icon"><i class="fas fa-wrench"></i></div><h3>Basic</h3><div class="p-sub">Inspection &amp; Service</div><ul class="p-feats"><li><i class="fas fa-check"></i> Aircond Servicing</li><li><i class="fas fa-check"></i> Electrical Check</li><li><i class="fas fa-check"></i> Fault Diagnosis</li><li class="no"><i class="fas fa-times"></i> Installation</li><li class="no"><i class="fas fa-times"></i> Warranty</li></ul><a href="https://wa.me/601XXXXXXXXX" class="btn-out" style="width:100%;text-align:center;padding:13px" target="_blank">Get Free Quote</a></div>
+      <div class="p-card featured"><div class="p-badge">Most Popular</div><div class="p-icon"><i class="fas fa-star"></i></div><h3>Standard</h3><div class="p-sub">Supply &amp; Install</div><ul class="p-feats"><li><i class="fas fa-check"></i> Full Installation</li><li><i class="fas fa-check"></i> Equipment Supply</li><li><i class="fas fa-check"></i> Testing &amp; Commissioning</li><li><i class="fas fa-check"></i> 1-Year Warranty</li><li class="no"><i class="fas fa-times"></i> Maintenance Plan</li></ul><a href="https://wa.me/601XXXXXXXXX" style="background:#1A1A1A;color:#fff;padding:13px;border-radius:50px;width:100%;text-align:center;font-weight:700;display:block" target="_blank">Get Free Quote</a></div>
+      <div class="p-card"><div class="p-icon"><i class="fas fa-crown"></i></div><h3>Premium</h3><div class="p-sub">Full Solution</div><ul class="p-feats"><li><i class="fas fa-check"></i> Free Consultation</li><li><i class="fas fa-check"></i> Full Supply &amp; Install</li><li><i class="fas fa-check"></i> System Design</li><li><i class="fas fa-check"></i> Extended Warranty</li><li><i class="fas fa-check"></i> Maintenance Plan</li></ul><a href="https://wa.me/601XXXXXXXXX" class="btn-out" style="width:100%;text-align:center;padding:13px" target="_blank">Get Free Quote</a></div>
+    </div>
+    <p class="p-note">All pricing is custom-quoted. <a href="https://wa.me/601XXXXXXXXX" target="_blank">WhatsApp us</a> for a free estimate.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:50px">
+      <span class="sec-tag">Get In Touch</span>
+      <h2 class="sec-h">Contact Us</h2>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="c-item"><div class="ci" style="background:#DCFCE7;color:#25D366"><i class="fab fa-whatsapp"></i></div><div><div class="ci-lbl">WhatsApp</div><div class="ci-val"><a href="https://wa.me/601XXXXXXXXX">01X-XXX XXXX</a></div></div></div>
+        <div class="c-item"><div class="ci"><i class="fas fa-phone"></i></div><div><div class="ci-lbl">Pejabat Melaka</div><div class="ci-val"><a href="tel:+601XXXXXXXXX">01X-XXX XXXX</a></div></div></div>
+        <div class="c-item"><div class="ci"><i class="fas fa-phone"></i></div><div><div class="ci-lbl">Pejabat Nilai</div><div class="ci-val"><a href="tel:+601XXXXXXXXX">01X-XXX XXXX</a></div></div></div>
+        <div class="c-item"><div class="ci"><i class="fas fa-map-marker-alt"></i></div><div><div class="ci-lbl">Branches</div><div class="ci-val">Melaka &amp; Nilai, Malaysia</div></div></div>
+        <a href="https://wa.me/601XXXXXXXXX" class="wa-cta" target="_blank"><i class="fab fa-whatsapp" style="font-size:1.2rem"></i> Chat on WhatsApp Now</a>
+      </div>
+      <div class="map-ph"><i class="fas fa-map-marked-alt"></i><p style="font-weight:700;color:#aaa">Google Maps</p><small>Paste your Google Maps embed here</small></div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2025 <span>Volta Electrical Supply</span>. Power Your Space.</footer>
+<a href="https://wa.me/601XXXXXXXXX" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+window.addEventListener('scroll',()=>{
+  const nav = document.querySelector('nav')
+  nav.style.boxShadow = window.scrollY > 50 ? '0 2px 20px rgba(0,0,0,0.1)' : '0 1px 16px rgba(0,0,0,0.07)'
+})
+</script>
+</body>
+</html>

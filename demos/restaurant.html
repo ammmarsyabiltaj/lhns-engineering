@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Warung Kopi Setia | Authentic Malaysian Food</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--orange:#FF6B35;--dark:#1A0800;--brown:#3E1F00;--cream:#FFF8F0;--text:#2D1500}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Inter',sans-serif;background:#fff;color:var(--text)}
+a{text-decoration:none;color:inherit}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;transition:all .3s}
+nav.scrolled{background:var(--dark);box-shadow:0 2px 20px rgba(0,0,0,0.3)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:#fff;font-weight:800}
+.nav-logo span{color:var(--orange)}
+.nav-links{display:flex;gap:24px}
+.nav-links a{color:rgba(255,255,255,0.8);font-size:0.88rem;font-weight:500}
+.nav-links a:hover{color:var(--orange)}
+.nav-cta{background:var(--orange);color:#fff;padding:10px 22px;border-radius:50px;font-weight:700;font-size:0.86rem}
+
+.hero{min-height:100vh;background:linear-gradient(160deg,var(--dark) 0%,var(--brown) 60%,#5C2D00 100%);display:flex;align-items:center;padding:100px 40px 60px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-100px;top:50%;transform:translateY(-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(255,107,53,0.15),transparent 70%);pointer-events:none}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;width:100%}
+.hero-badge{display:inline-block;border:1px solid var(--orange);color:var(--orange);font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:20px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,3.8rem);color:#fff;line-height:1.1;margin-bottom:18px}
+.hero h1 span{color:var(--orange)}
+.hero p{color:rgba(255,255,255,0.65);font-size:1rem;line-height:1.7;margin-bottom:32px;max-width:440px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-orange{background:var(--orange);color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:all .2s}
+.btn-orange:hover{background:#e85a24;transform:translateY(-2px)}
+.btn-outline-w{border:2px solid rgba(255,255,255,0.3);color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;transition:all .2s}
+.btn-outline-w:hover{border-color:#fff;background:rgba(255,255,255,0.1)}
+.hero-visual{display:flex;flex-direction:column;gap:16px}
+.food-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:20px;display:flex;align-items:center;gap:16px;backdrop-filter:blur(10px)}
+.food-emoji{font-size:2.2rem}
+.food-card h4{color:#fff;font-size:0.95rem;font-weight:700;margin-bottom:4px}
+.food-card p{color:rgba(255,255,255,0.5);font-size:0.8rem}
+.food-price{margin-left:auto;color:var(--orange);font-weight:800;font-size:1rem}
+
+section{padding:90px 40px}
+.container{max-width:1100px;margin:0 auto}
+.sec-tag{display:inline-block;background:var(--orange);color:#fff;font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:14px}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;margin-bottom:14px;color:var(--text)}
+.sec-sub{color:#777;font-size:0.96rem;max-width:560px;line-height:1.7}
+
+/* MENU */
+#menu{background:var(--cream)}
+.menu-cats{display:flex;gap:10px;margin-bottom:40px;flex-wrap:wrap}
+.cat-btn{padding:9px 20px;border-radius:50px;border:2px solid var(--orange);font-weight:600;font-size:0.86rem;cursor:pointer;transition:all .2s;background:transparent;color:var(--orange);font-family:'Inter',sans-serif}
+.cat-btn.active,.cat-btn:hover{background:var(--orange);color:#fff}
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.menu-item{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.07);transition:all .3s}
+.menu-item:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,0.12)}
+.menu-img{height:160px;display:flex;align-items:center;justify-content:center;font-size:4rem}
+.menu-info{padding:16px 18px}
+.menu-info h4{font-weight:700;margin-bottom:6px;font-size:0.95rem}
+.menu-info p{color:#888;font-size:0.82rem;margin-bottom:12px;line-height:1.5}
+.menu-footer{display:flex;align-items:center;justify-content:space-between}
+.menu-price{font-weight:800;color:var(--orange);font-size:1rem}
+.menu-order{background:var(--orange);color:#fff;border:none;padding:7px 16px;border-radius:50px;font-size:0.78rem;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.about-img-wrap{position:relative}
+.about-img{height:380px;background:linear-gradient(135deg,var(--brown),#5C2D00);border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:6rem}
+.about-badge{position:absolute;bottom:-16px;right:-16px;background:var(--orange);color:#fff;padding:16px 20px;border-radius:16px;text-align:center;box-shadow:0 8px 24px rgba(255,107,53,0.4)}
+.about-badge .num{font-size:1.6rem;font-weight:900;display:block}
+.about-badge .lbl{font-size:0.72rem;font-weight:600}
+.about p{color:#666;margin-bottom:16px;line-height:1.8;font-size:0.96rem}
+.perks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+.perk{display:flex;align-items:center;gap:10px;font-size:0.88rem;font-weight:600;color:var(--text)}
+.perk i{color:var(--orange)}
+
+/* TESTIMONIALS */
+#reviews{background:var(--brown)}
+#reviews .sec-title{color:#fff}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.review-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:26px}
+.review-stars{color:#FF6B35;margin-bottom:12px;letter-spacing:3px}
+.review-card p{color:rgba(255,255,255,0.7);font-size:0.88rem;line-height:1.7;font-style:italic;margin-bottom:18px}
+.reviewer{display:flex;align-items:center;gap:10px}
+.reviewer-av{width:38px;height:38px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:0.9rem}
+.reviewer strong{display:block;font-size:0.86rem;color:#fff}
+.reviewer span{font-size:0.76rem;color:rgba(255,255,255,0.4)}
+
+/* CONTACT */
+#contact{background:var(--cream)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.contact-item{display:flex;gap:16px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #e8d8cc}
+.contact-item:last-of-type{border:none;margin-bottom:28px}
+.ci-icon{width:46px;height:46px;border-radius:12px;background:var(--orange);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;flex-shrink:0}
+.ci-label{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#999;margin-bottom:4px}
+.ci-val{font-size:0.95rem;font-weight:600;color:var(--text)}
+.ci-val a{color:var(--text)}
+.wa-big{background:#25D366;color:#fff;padding:16px;border-radius:14px;display:flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:1rem;width:100%;margin-top:8px;transition:all .2s}
+.wa-big:hover{background:#1fb857;transform:translateY(-2px)}
+.map-ph{height:300px;background:linear-gradient(135deg,#e8d8cc,#f5ece4);border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#999;border:2px dashed #ddd}
+.map-ph i{font-size:2.5rem;color:#ccc}
+
+footer{background:var(--dark);color:rgba(255,255,255,0.4);text-align:center;padding:24px 40px;font-size:0.82rem}
+footer span{color:var(--orange)}
+
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:999;width:58px;height:58px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 4px 20px rgba(37,211,102,0.4);animation:waf 3s ease-in-out infinite}
+@keyframes waf{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.wa-float:hover{animation:none;transform:scale(1.1)}
+
+@media(max-width:900px){.hero-inner,.about-grid,.contact-grid{grid-template-columns:1fr}.menu-grid{grid-template-columns:repeat(2,1fr)}.reviews-grid{grid-template-columns:1fr}.nav-links{display:none}nav{padding:14px 20px}}
+@media(max-width:600px){.menu-grid{grid-template-columns:1fr}section{padding:60px 20px}nav{padding:12px 20px}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-logo">Warung Kopi <span>Setia</span></div>
+  <div class="nav-links">
+    <a href="#menu">Menu</a><a href="#about">About</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a>
+  </div>
+  <a href="https://wa.me/601XXXXXXXXX" class="nav-cta" target="_blank"><i class="fab fa-whatsapp"></i> Order Now</a>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">🍛 Authentic Malaysian Food</div>
+      <h1>Taste the <span>Heart</span> of Malaysia</h1>
+      <p>From fragrant nasi lemak to rich teh tarik — we bring you real home-cooked Malaysian flavours in every bite. Dine in, takeaway or order via WhatsApp.</p>
+      <div class="hero-btns">
+        <a href="#menu" class="btn-orange"><i class="fas fa-utensils"></i> View Menu</a>
+        <a href="https://wa.me/601XXXXXXXXX" class="btn-outline-w" target="_blank"><i class="fab fa-whatsapp"></i> Order via WhatsApp</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="food-card"><div class="food-emoji">🍛</div><div><h4>Nasi Lemak Special</h4><p>Coconut rice, sambal, ikan bilis</p></div><div class="food-price">RM 8</div></div>
+      <div class="food-card"><div class="food-emoji">🥘</div><div><h4>Rendang Daging</h4><p>Slow-cooked beef in rich spices</p></div><div class="food-price">RM 14</div></div>
+      <div class="food-card"><div class="food-emoji">🧋</div><div><h4>Teh Tarik</h4><p>Frothy pulled milk tea</p></div><div class="food-price">RM 3</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="container">
+    <div class="section-header" style="margin-bottom:32px">
+      <span class="sec-tag">Our Menu</span>
+      <h2 class="sec-title">What We Serve</h2>
+      <p class="sec-sub">Fresh ingredients, traditional recipes, made with love every day.</p>
+    </div>
+    <div class="menu-cats">
+      <button class="cat-btn active">All</button>
+      <button class="cat-btn">Rice Dishes</button>
+      <button class="cat-btn">Noodles</button>
+      <button class="cat-btn">Drinks</button>
+      <button class="cat-btn">Desserts</button>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-item"><div class="menu-img" style="background:linear-gradient(135deg,#5C2D00,#FF6B35)">🍛</div><div class="menu-info"><h4>Nasi Lemak Special</h4><p>Fragrant coconut rice with sambal, fried chicken, ikan bilis & egg</p><div class="menu-footer"><span class="menu-price">RM 8.00</span><button class="menu-order">Order Now</button></div></div></div>
+      <div class="menu-item"><div class="menu-img" style="background:linear-gradient(135deg,#8B0000,#CC3300)">🥘</div><div class="menu-info"><h4>Rendang Daging</h4><p>Slow-cooked beef rendang with ketupat and fresh sambal</p><div class="menu-footer"><span class="menu-price">RM 14.00</span><button class="menu-order">Order Now</button></div></div></div>
+      <div class="menu-item"><div class="menu-img" style="background:linear-gradient(135deg,#FF8C00,#FFA500)">🍜</div><div class="menu-info"><h4>Mee Goreng Mamak</h4><p>Spicy fried noodles with egg, tofu and fresh tomatoes</p><div class="menu-footer"><span class="menu-price">RM 7.00</span><button class="menu-order">Order Now</button></div></div></div>
+      <div class="menu-item"><div class="menu-img" style="background:linear-gradient(135deg,#1A5276,#2980B9)">🧋</div><div class="menu-info"><h4>Teh Tarik Special</h4><p>Our signature frothy pulled tea, hot or iced</p><div class="menu-footer"><span class="menu-price">RM 3.50</span><button class="menu-order">Order Now</button></div></div></div>
+      <div class="menu-item"><div class="menu-img" style="background:linear-gradient(135deg,#5D4037,#795548)">🍢</div><div class="menu-info"><h4>Satay 10pcs</h4><p>Grilled skewers with peanut sauce, ketupat & cucumber</p><div class="menu-footer"><span class="menu-price">RM 12.00</span><button class="menu-order">Order Now</button></div></div></div>
+      <div class="menu-item"><div class="menu-img" style="background:linear-gradient(135deg,#1B5E20,#2E7D32)">🍵</div><div class="menu-info"><h4>Cendol</h4><p>Shaved ice with coconut milk, gula melaka & green jelly</p><div class="menu-footer"><span class="menu-price">RM 5.00</span><button class="menu-order">Order Now</button></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" style="background:#fff">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <div class="about-img">🍽️</div>
+        <div class="about-badge"><span class="num">15+</span><span class="lbl">Years Serving</span></div>
+      </div>
+      <div>
+        <span class="sec-tag">Our Story</span>
+        <h2 class="sec-title">Family Recipe,<br>Honest Food</h2>
+        <p>Warung Kopi Setia started in 2008 as a small stall by Mak Cik Rosnah, serving her late mother's recipes to the neighbourhood. Today, we're a full restaurant but the heart remains the same — real Malaysian food made with love.</p>
+        <p>Every dish uses fresh market ingredients sourced daily. No shortcuts, no preservatives — just the taste you grew up with.</p>
+        <div class="perks">
+          <div class="perk"><i class="fas fa-check-circle"></i> Halal Certified</div>
+          <div class="perk"><i class="fas fa-check-circle"></i> Daily Fresh Ingredients</div>
+          <div class="perk"><i class="fas fa-check-circle"></i> Dine In & Takeaway</div>
+          <div class="perk"><i class="fas fa-check-circle"></i> WhatsApp Orders</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:0">
+      <span class="sec-tag">Reviews</span>
+      <h2 class="sec-title" style="color:#fff">What Customers Say</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card"><div class="review-stars">★★★★★</div><p>"Best nasi lemak in town! The sambal is amazing and the portion is very generous. Will definitely come back."</p><div class="reviewer"><div class="reviewer-av">A</div><div><strong>Ahmad Razif</strong><span>Regular Customer</span></div></div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><p>"Ordered via WhatsApp for my office and the food arrived hot and fresh. Very convenient and delicious!"</p><div class="reviewer"><div class="reviewer-av">S</div><div><strong>Siti Nabilah</strong><span>Office Order</span></div></div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><p>"Mee goreng mamak here is the best. Very authentic taste, reminds me of my hometown. Highly recommended!"</p><div class="reviewer"><div class="reviewer-av">R</div><div><strong>Rajan Kumar</strong><span>Food Blogger</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:50px">
+      <span class="sec-tag">Find Us</span>
+      <h2 class="sec-title">Visit or Order Today</h2>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-item"><div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div><div><div class="ci-label">Address</div><div class="ci-val">No. 12, Jalan Setia 1, Taman Setia, Melaka</div></div></div>
+        <div class="contact-item"><div class="ci-icon"><i class="fas fa-clock"></i></div><div><div class="ci-label">Operating Hours</div><div class="ci-val">Daily 7:00 AM – 10:00 PM</div></div></div>
+        <div class="contact-item"><div class="ci-icon"><i class="fas fa-phone"></i></div><div><div class="ci-label">Phone</div><div class="ci-val"><a href="tel:+601XXXXXXXXX">01X-XXX XXXX</a></div></div></div>
+        <a href="https://wa.me/601XXXXXXXXX" class="wa-big" target="_blank"><i class="fab fa-whatsapp" style="font-size:1.3rem"></i> WhatsApp to Order Now</a>
+      </div>
+      <div class="map-ph"><i class="fas fa-map-marked-alt"></i><p style="font-weight:700">Google Maps</p><small>Paste your Google Maps embed here</small></div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2025 <span>Warung Kopi Setia</span>. All rights reserved. | Authentic Malaysian Food</footer>
+<a href="https://wa.me/601XXXXXXXXX" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY>50)
+})
+document.querySelectorAll('.cat-btn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.cat-btn').forEach(x=>x.classList.remove('active'))
+    b.classList.add('active')
+  })
+})
+</script>
+</body>
+</html>

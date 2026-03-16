@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Iron Peak Gym | Build. Grind. Conquer.</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--green:#00DD55;--dark:#000;--dark2:#0A0A0A;--dark3:#111;--gray:#888}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Inter',sans-serif;background:var(--dark);color:#fff}
+a{text-decoration:none;color:inherit}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:16px 48px;display:flex;align-items:center;justify-content:space-between;transition:all .3s}
+nav.scrolled{background:rgba(0,0,0,0.95);border-bottom:1px solid #111}
+.nav-logo{font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;letter-spacing:3px;text-transform:uppercase;color:#fff}
+.nav-logo span{color:var(--green)}
+.nav-links{display:flex;gap:28px}
+.nav-links a{color:#555;font-size:0.82rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;transition:color .2s}
+.nav-links a:hover{color:var(--green)}
+.nav-cta{background:var(--green);color:#000;padding:10px 24px;font-family:'Barlow Condensed',sans-serif;font-size:0.95rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;transition:all .2s}
+.nav-cta:hover{background:#00bb44}
+
+.hero{min-height:100vh;background:var(--dark);display:flex;align-items:center;padding:100px 48px 60px;position:relative;overflow:hidden}
+.hero-bg-text{position:absolute;font-family:'Barlow Condensed',sans-serif;font-size:22vw;font-weight:800;color:rgba(255,255,255,0.02);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;letter-spacing:-5px}
+.hero-content{position:relative;z-index:2;max-width:1100px;width:100%;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-left .label{font-family:'Barlow Condensed',sans-serif;font-size:0.8rem;letter-spacing:5px;text-transform:uppercase;color:var(--green);margin-bottom:16px}
+.hero-left h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(3.5rem,7vw,6rem);line-height:0.9;font-weight:800;text-transform:uppercase;letter-spacing:-1px;margin-bottom:24px}
+.hero-left h1 .green{color:var(--green)}
+.hero-left p{color:#555;font-size:0.95rem;line-height:1.7;max-width:400px;margin-bottom:32px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-green{background:var(--green);color:#000;padding:14px 30px;font-family:'Barlow Condensed',sans-serif;font-size:1rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:all .2s}
+.btn-green:hover{background:#00bb44;transform:translateY(-2px)}
+.btn-outline-g{border:2px solid var(--green);color:var(--green);padding:14px 30px;font-family:'Barlow Condensed',sans-serif;font-size:1rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;transition:all .2s}
+.btn-outline-g:hover{background:var(--green);color:#000}
+.hero-right{display:flex;flex-direction:column;gap:14px}
+.stat-card{background:#111;border-left:3px solid var(--green);padding:18px 22px;display:flex;align-items:center;justify-content:space-between}
+.stat-num{font-family:'Barlow Condensed',sans-serif;font-size:2.2rem;font-weight:800;color:var(--green)}
+.stat-info{text-align:right}
+.stat-info .title{font-size:0.78rem;color:#555;text-transform:uppercase;letter-spacing:1px}
+.stat-info .sub{font-size:0.72rem;color:#333;margin-top:2px}
+
+section{padding:90px 48px}
+.container{max-width:1100px;margin:0 auto}
+.sec-label{font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;letter-spacing:5px;text-transform:uppercase;color:var(--green);margin-bottom:12px}
+.sec-h{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.2rem,4vw,3.2rem);font-weight:800;text-transform:uppercase;margin-bottom:14px}
+
+/* CLASSES */
+#classes{background:var(--dark2)}
+.classes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#1a1a1a;margin-top:50px}
+.class-item{background:var(--dark2);padding:32px 24px;border-bottom:3px solid transparent;transition:all .3s}
+.class-item:hover{background:var(--dark3);border-bottom-color:var(--green)}
+.class-emoji{font-size:2.4rem;margin-bottom:16px}
+.class-item h3{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+.class-item p{font-size:0.83rem;color:#555;line-height:1.6;margin-bottom:14px}
+.class-time{font-size:0.78rem;color:var(--green);font-weight:600;display:flex;align-items:center;gap:6px}
+
+/* PRICING */
+#pricing{background:var(--dark)}
+.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#111;margin-top:50px}
+.plan{background:var(--dark);padding:40px 28px;text-align:center;position:relative;border:1px solid #111;transition:all .3s}
+.plan:hover{border-color:var(--green)}
+.plan.popular{background:#0A1A0A;border:1px solid var(--green)}
+.plan-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--green);color:#000;font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;font-weight:700}
+.plan-name{font-family:'Barlow Condensed',sans-serif;font-size:1rem;letter-spacing:3px;text-transform:uppercase;color:#555;margin-bottom:16px}
+.plan-price{font-family:'Barlow Condensed',sans-serif;font-size:3.5rem;font-weight:800;line-height:1;margin-bottom:6px}
+.plan-price .curr{font-size:1.2rem;vertical-align:super}
+.plan-price .per{font-size:0.8rem;font-family:'Inter',sans-serif;color:#555;display:block;margin-top:4px}
+.plan-feats{margin:24px 0;display:flex;flex-direction:column;gap:10px;text-align:left}
+.plan-feats li{font-size:0.84rem;color:#666;display:flex;align-items:center;gap:8px}
+.plan-feats li i{color:var(--green);font-size:0.75rem}
+.plan-feats li.no{color:#333}
+.plan-feats li.no i{color:#333}
+.plan-btn{display:block;padding:13px;font-family:'Barlow Condensed',sans-serif;font-size:0.9rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;transition:all .2s;border:2px solid #333;color:#555;margin-top:8px}
+.plan-btn:hover,.plan.popular .plan-btn{background:var(--green);color:#000;border-color:var(--green)}
+
+/* TRAINERS */
+#trainers{background:var(--dark2)}
+.trainers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px}
+.trainer-card{border:1px solid #1a1a1a;overflow:hidden;transition:all .3s}
+.trainer-card:hover{border-color:var(--green)}
+.trainer-img{height:200px;display:flex;align-items:center;justify-content:center;font-size:5rem;background:linear-gradient(180deg,#0a1a0a,#000)}
+.trainer-body{padding:20px}
+.trainer-body h4{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px}
+.trainer-spec{font-size:0.75rem;color:var(--green);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+.trainer-body p{font-size:0.82rem;color:#444;line-height:1.5}
+
+/* CTA */
+#cta{background:var(--green);padding:70px 48px;text-align:center}
+#cta h2{font-family:'Barlow Condensed',sans-serif;font-size:3.5rem;font-weight:800;text-transform:uppercase;color:#000;margin-bottom:10px}
+#cta p{color:rgba(0,0,0,0.6);margin-bottom:28px;font-size:0.96rem}
+.btn-black{background:#000;color:#fff;padding:16px 40px;font-family:'Barlow Condensed',sans-serif;font-size:1rem;letter-spacing:3px;text-transform:uppercase;font-weight:700;display:inline-flex;align-items:center;gap:10px;transition:all .2s}
+.btn-black:hover{background:#1a1a1a;transform:translateY(-2px)}
+
+footer{background:#050505;border-top:1px solid #111;color:#333;text-align:center;padding:24px;font-size:0.8rem}
+footer span{color:var(--green)}
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:999;width:58px;height:58px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 4px 20px rgba(37,211,102,0.4);animation:waf 3s ease-in-out infinite}
+@keyframes waf{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+@media(max-width:900px){.hero-content,.classes-grid,.plans-grid,.trainers-grid{grid-template-columns:1fr}.nav-links{display:none}nav{padding:14px 20px}}
+@media(max-width:600px){section{padding:60px 20px}.hero{padding:80px 20px 50px}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-logo">IRON <span>PEAK</span></div>
+  <div class="nav-links">
+    <a href="#classes">Classes</a><a href="#pricing">Pricing</a><a href="#trainers">Trainers</a><a href="#cta">Join</a>
+  </div>
+  <a href="https://wa.me/601XXXXXXXXX" class="nav-cta" target="_blank">Free Trial</a>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-bg-text">GRIND</div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="label">💪 Nilai's #1 Gym</div>
+      <h1>BUILD.<br>GRIND.<br><span class="green">CONQUER.</span></h1>
+      <p>State-of-the-art equipment, expert coaches, and a community that pushes you to be your best. Your transformation starts today.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/601XXXXXXXXX" class="btn-green" target="_blank"><i class="fab fa-whatsapp"></i> Get Free Trial</a>
+        <a href="#pricing" class="btn-outline-g">View Pricing</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="stat-card"><div class="stat-num">500+</div><div class="stat-info"><div class="title">Active Members</div><div class="sub">Growing monthly</div></div></div>
+      <div class="stat-card"><div class="stat-num">24/7</div><div class="stat-info"><div class="title">Access Hours</div><div class="sub">Open all day</div></div></div>
+      <div class="stat-card"><div class="stat-num">15+</div><div class="stat-info"><div class="title">Expert Trainers</div><div class="sub">Certified coaches</div></div></div>
+      <div class="stat-card"><div class="stat-num">50+</div><div class="stat-info"><div class="title">Equipment Types</div><div class="sub">Latest machines</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="classes">
+  <div class="container">
+    <div class="sec-label">Programs</div>
+    <h2 class="sec-h">Our Classes</h2>
+    <p style="color:#444;font-size:0.9rem">Choose from a range of group classes and personal training sessions.</p>
+  </div>
+  <div class="classes-grid" style="max-width:1100px;margin:0 auto;margin-top:40px">
+    <div class="class-item"><div class="class-emoji">🥊</div><h3>Boxing & Muay Thai</h3><p>High-intensity striking classes for all fitness levels. Build endurance and learn self-defence.</p><div class="class-time"><i class="fas fa-clock"></i> Mon, Wed, Fri — 7:00 PM</div></div>
+    <div class="class-item"><div class="class-emoji">🧘</div><h3>Yoga & Mobility</h3><p>Improve flexibility, recovery and mental focus with guided yoga sessions.</p><div class="class-time"><i class="fas fa-clock"></i> Tue, Thu, Sat — 8:00 AM</div></div>
+    <div class="class-item"><div class="class-emoji">🏋️</div><h3>Powerlifting</h3><p>Build serious strength under the guidance of certified powerlifting coaches.</p><div class="class-time"><i class="fas fa-clock"></i> Daily — 6:00 AM & 6:00 PM</div></div>
+    <div class="class-item"><div class="class-emoji">🚴</div><h3>Spin Cycling</h3><p>High-energy cycling sessions to blast calories and build cardiovascular fitness.</p><div class="class-time"><i class="fas fa-clock"></i> Mon, Wed, Fri — 6:30 AM</div></div>
+    <div class="class-item"><div class="class-emoji">🤸</div><h3>HIIT Training</h3><p>Maximum burn in minimum time. Intense interval training for fast results.</p><div class="class-time"><i class="fas fa-clock"></i> Daily — 7:30 AM & 5:30 PM</div></div>
+    <div class="class-item"><div class="class-emoji">💪</div><h3>Personal Training</h3><p>1-on-1 sessions with a dedicated trainer tailored to your specific goals.</p><div class="class-time"><i class="fas fa-clock"></i> Flexible Schedule</div></div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="container">
+    <div class="sec-label">Membership</div>
+    <h2 class="sec-h">Choose Your Plan</h2>
+    <p style="color:#444;font-size:0.9rem">No lock-in contracts. Cancel anytime.</p>
+  </div>
+  <div class="plans-grid" style="max-width:1100px;margin:0 auto;margin-top:40px">
+    <div class="plan">
+      <div class="plan-name">Basic</div>
+      <div class="plan-price"><span class="curr">RM</span>79<span class="per">per month</span></div>
+      <ul class="plan-feats">
+        <li><i class="fas fa-check"></i> Gym Floor Access</li>
+        <li><i class="fas fa-check"></i> Locker Room</li>
+        <li><i class="fas fa-check"></i> 2 Group Classes/week</li>
+        <li class="no"><i class="fas fa-times"></i> Personal Trainer</li>
+        <li class="no"><i class="fas fa-times"></i> Sauna Access</li>
+      </ul>
+      <a href="https://wa.me/601XXXXXXXXX" class="plan-btn" target="_blank">Get Started</a>
+    </div>
+    <div class="plan popular">
+      <div class="plan-badge">Most Popular</div>
+      <div class="plan-name">Premium</div>
+      <div class="plan-price"><span class="curr">RM</span>149<span class="per">per month</span></div>
+      <ul class="plan-feats">
+        <li><i class="fas fa-check"></i> Full Gym Access</li>
+        <li><i class="fas fa-check"></i> Unlimited Classes</li>
+        <li><i class="fas fa-check"></i> 4 PT Sessions/month</li>
+        <li><i class="fas fa-check"></i> Sauna & Steam Room</li>
+        <li><i class="fas fa-check"></i> Nutrition Guidance</li>
+      </ul>
+      <a href="https://wa.me/601XXXXXXXXX" class="plan-btn" target="_blank">Get Started</a>
+    </div>
+    <div class="plan">
+      <div class="plan-name">Elite</div>
+      <div class="plan-price"><span class="curr">RM</span>249<span class="per">per month</span></div>
+      <ul class="plan-feats">
+        <li><i class="fas fa-check"></i> Everything in Premium</li>
+        <li><i class="fas fa-check"></i> Unlimited PT Sessions</li>
+        <li><i class="fas fa-check"></i> Meal Planning</li>
+        <li><i class="fas fa-check"></i> Body Composition Scan</li>
+        <li><i class="fas fa-check"></i> Guest Pass x2/month</li>
+      </ul>
+      <a href="https://wa.me/601XXXXXXXXX" class="plan-btn" target="_blank">Get Started</a>
+    </div>
+  </div>
+</section>
+
+<section id="trainers">
+  <div class="container">
+    <div class="sec-label">The Team</div>
+    <h2 class="sec-h">Expert Trainers</h2>
+    <div class="trainers-grid">
+      <div class="trainer-card"><div class="trainer-img">🏋️</div><div class="trainer-body"><h4>Azri Hakim</h4><div class="trainer-spec">Powerlifting · Strength Coach</div><p>8 years experience. National powerlifting competitor and certified strength coach.</p></div></div>
+      <div class="trainer-card"><div class="trainer-img">🥊</div><div class="trainer-body"><h4>Kamal Idris</h4><div class="trainer-spec">Muay Thai · Boxing</div><p>Former national Muay Thai athlete. Certified combat sports instructor.</p></div></div>
+      <div class="trainer-card"><div class="trainer-img">🧘</div><div class="trainer-body"><h4>Nurul Ain</h4><div class="trainer-spec">Yoga · Mobility Coach</div><p>RYT-200 certified yoga instructor with expertise in sports recovery.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="cta">
+  <h2>START YOUR FREE TRIAL TODAY</h2>
+  <p>3 days free — no commitment, no credit card required.</p>
+  <a href="https://wa.me/601XXXXXXXXX" class="btn-black" target="_blank"><i class="fab fa-whatsapp"></i> Claim Free Trial on WhatsApp</a>
+</section>
+
+<footer>© 2025 <span>Iron Peak Gym</span>. Build. Grind. Conquer.</footer>
+<a href="https://wa.me/601XXXXXXXXX" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50)
+})
+</script>
+</body>
+</html>
